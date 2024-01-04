@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ course_code }} Add an Experience | UQ Course Experiences
+{% endblock %}
+
+{% block content %}
+<h1>Add an Experience | UQ Course Experiences</h1>
+
+<p>
+    Share your experience below. Include as much detail as you want, like what you thought of the course, your
+    opinions of the assessments/staff, and the year/semester in which you took the course.
+</p>
+<form method="post" action="{% url 'add_experience' %}">
+    {% csrf_token %}
+    <label for="course_code">Course code: </label>
+    <input type="text" name="course_code" id="course_code" value="{{ course_code }}" maxlength="8" minlength="8"
+           autofocus>
+    {% if invalid_course_code %}
+    <p class="error">
+        Please enter a valid course code (four letters followed by four digits, e.g. CSSE1001).
+    </p>
+    {% endif %}
+    <p>My rating:</p>
+    <input type="radio" id="liked" name="rating" value="2">
+    <label for="liked">👍 Liked the course</label><br>
+    <input type="radio" id="neutral" name="rating" value="1" checked>
+    <label for="neutral">😐 Neutral</label><br>
+    <input type="radio" id="disliked" name="rating" value="0">
+    <label for="disliked">👎 Didn't like the course</label><br>
+    <br>
+    <label for="description">My experience: </label>
+    {% if invalid_course_code %}
+    <p class="error">
+        Please enter a valid description (at least two characters).
+    </p>
+    {% endif %}
+    <br>
+    <textarea name="description" id="description" cols="50" rows="10" class="my-experience"></textarea>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+{% if invalid_description %}
+<p class="error">
+    Please enter a valid course code (four letters followed by four digits, e.g. CSSE1001).
+</p>
+{% endif %}
+
+{% endblock %}

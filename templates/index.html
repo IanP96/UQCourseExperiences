@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Home | UQ Course Experiences
+{% endblock %}
+
+{% block content %}
+<h1>Home | UQ Course Experiences</h1>
+<h2>About</h2>
+<p>
+    Welcome to UQ Course Experiences, a site where students can share their experiences and feedback of UQ courses so
+    new students can see which courses are worth taking.
+</p>
+<p>
+    The goal of this site is to hopefully inform students whether the courses they are considering are interesting,
+    educational or just not worth it <span class="csse2002">(CSSE2002)</span>.
+</p>
+<p>
+    Please not that this is an unofficial site which is not affiliated with UQ in any way.
+</p>
+<h2>Search</h2>
+<p>
+    To search for experiences, enter the course code below.
+</p>
+<form method="get" action="{% url 'home' %}">
+    <label for="course_code">Course code: </label>
+    <input type="text" name="course_code" id="course_code" value="{{ course_code }}" maxlength="8" minlength="8"
+           autofocus>
+    <input type="submit" value="Submit">
+</form>
+{% if invalid %}
+<p class="error">
+    Please enter a valid course code (four letters followed by four digits, e.g. CSSE1001).
+</p>
+<script>
+    alert("Please enter a valid course code (four letters followed by four digits, e.g. CSSE1001).");
+</script>
+{% endif %}
+<h2>Add Experience</h2>
+<p>You can add your own course experiences <a href="{% url 'add_experience' %}">here</a>.</p>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Add Comment | UQ Course Experiences
+{% endblock %}
+
+{% block content %}
+<h1>Add Comment | UQ Course Experiences</h1>
+{% if commented %}
+<h2>Your comment has been added. Thank you!</h2>
+<p><a href="{% url 'home' %}" autofocus>Back to homepage</a></p>
+{% endif %}
+<p>
+    {{ experience.description }}<br>
+    <span class="small">
+        <i>{{ experience.get_rating_display }} - {{ experience.readable_creation_date }}</i>
+    </span>
+</p>
+{% if commenting %}
+<form action="/comment/{{ experience.id }}" method="post">
+    {% csrf_token %}
+    <label for="comment">Add comment: </label><br>
+    <textarea name="comment" id="comment" cols="50" rows="10" autofocus></textarea><br>
+    <input type="submit" value="Submit">
+</form>
+{% endif %}
+{% if comments %}
+<p class="comment">{{ comments|length }} comment/s</p>
+{% for comment in comments %}
+<p class="comment">{{ comment.description }} - <i>{{ comment.readable_creation_date }}</i></p>
+{% endfor %}
+{% endif %}
+{% endblock %}
