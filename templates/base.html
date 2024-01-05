@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon2.png' %}"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <nav>
+    <img src="{% static 'images/favicon2.ico' %}" alt="Icon">
     <a href="{% url 'home' %}" class="nav-link">Home</a>
     <a href="{% url 'add_experience' %}" class="nav-link">Add Experience</a>
 </nav>

@@ -10,9 +10,13 @@ body {
 nav {
     padding: 2em 2em;
     background-color: var(--purple);
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
 .nav-link {
-    padding: 1em 3em;
+    margin-left: 2em;
+    margin-right: 2em;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     color: white;
     font-size: 1.4em;
@@ -56,4 +60,8 @@ input, textarea {
 }
 .green {
     color: green;
+}
+img {
+    width: 4em;
+    height: 4em;
 }
