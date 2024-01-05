@@ -10,9 +10,9 @@
 </head>
 <body>
 <nav>
-    <img src="{% static 'images/favicon2.ico' %}" alt="Icon">
-    <a href="{% url 'home' %}" class="nav-link">Home</a>
-    <a href="{% url 'add_experience' %}" class="nav-link">Add Experience</a>
+    <span class="nav-span"><img src="{% static 'images/favicon.ico' %}" alt="Icon"></span>
+    <span class="nav-span"><a href="{% url 'home' %}" class="nav-link">Home</a></span>
+    <span class="nav-span"><a href="{% url 'add_experience' %}" class="nav-link">Add Experience</a></span>
 </nav>
 {% block content %}{% endblock %}
 </body>

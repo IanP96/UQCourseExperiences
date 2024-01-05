@@ -14,9 +14,10 @@ nav {
     align-items: center;
     justify-content: left;
 }
+.nav-span {
+    margin: 0em 2em;
+}
 .nav-link {
-    margin-left: 2em;
-    margin-right: 2em;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     color: white;
     font-size: 1.4em;
