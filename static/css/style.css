@@ -3,9 +3,9 @@
     --purple: #502080;
     --comment-grey: #696969;
 }
-body {
-    padding-left: 1em;
-    padding-right: 1em;
+main {
+    padding: 0em 1em;
+    font-weight: 300;
 }
 nav {
     padding: 2em 2em;
@@ -13,9 +13,10 @@ nav {
     display: flex;
     align-items: center;
     justify-content: left;
+    height: 3em;
 }
 .nav-span {
-    margin: 0em 2em;
+    padding: 1em;
 }
 .nav-link {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -63,6 +64,6 @@ input, textarea {
     color: green;
 }
 img {
-    width: 4em;
-    height: 4em;
+    width: 3em;
+    height: 3em;
 }

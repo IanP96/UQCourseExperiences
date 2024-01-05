@@ -10,10 +10,13 @@
 </head>
 <body>
 <nav>
-    <span class="nav-span"><img src="{% static 'images/favicon.ico' %}" alt="Icon"></span>
-    <span class="nav-span"><a href="{% url 'home' %}" class="nav-link">Home</a></span>
-    <span class="nav-span"><a href="{% url 'add_experience' %}" class="nav-link">Add Experience</a></span>
+    <a href="{% url 'home' %}" class="nav-link"><span class="nav-span"><img src="{% static 'images/favicon.ico' %}"
+                                                                            alt="Icon"></span></a>
+    <a href="{% url 'home' %}" class="nav-link"><span class="nav-span">Home</span></a>
+    <a href="{% url 'add_experience' %}" class="nav-link"><span class="nav-span">Add Experience</span></a>
 </nav>
-{% block content %}{% endblock %}
+<main>
+    {% block content %}{% endblock %}
+</main>
 </body>
 </html>
