@@ -14,7 +14,7 @@ Add Comment | Course Experiences
 <p>
     {{ experience.description }}<br>
     <span class="small">
-        <i>{{ experience.get_rating_display }} - {{ experience.readable_creation_date }}</i>
+        {{ experience.get_rating_display }} • {{ experience.readable_creation_date }}
     </span>
 </p>
 {% if commenting %}
@@ -26,9 +26,11 @@ Add Comment | Course Experiences
 </form>
 {% endif %}
 {% if comments %}
-<p class="comment">{{ comments|length }} comment/s</p>
+<div class="comment">
+<p class="small">{{ comments|length }} comment/s</p>
 {% for comment in comments %}
-<p class="comment">{{ comment.description }} - <i>{{ comment.readable_creation_date }}</i></p>
+    <p>{{ comment.description }}<span class="small"> • {{ comment.readable_creation_date }}</span></p>
 {% endfor %}
+</div>
 {% endif %}
 {% endblock %}

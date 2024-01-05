@@ -31,20 +31,17 @@
     <label for="disliked">👎 Didn't like the course</label><br>
     <br>
     <label for="description">My experience: </label>
-    {% if invalid_course_code %}
+    {% if invalid_description %}
     <p class="error">
         Please enter a valid description (at least two characters).
     </p>
     {% endif %}
     <br>
-    <textarea name="description" id="description" cols="50" rows="10" class="my-experience"></textarea>
+    <textarea name="description" id="description" cols="50" rows="10" class="my-experience"
+              placeholder="What did you think of the course? Were the assessments fair? Were the lectures helpful? When did you take the course? What did you learn? Was it interesting? What advice would you give to future students?"></textarea>
     <br>
     <input type="submit" value="Submit">
 </form>
-{% if invalid_description %}
-<p class="error">
-    Please enter a valid course code (four letters followed by four digits, e.g. CSSE1001).
-</p>
-{% endif %}
+
 
 {% endblock %}

@@ -1,27 +1,28 @@
 @import "https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@300;400;500&display=swap";
+
 :root {
     --purple: #502080;
     --comment-grey: #696969;
 }
-main {
-    padding: 0em 1em;
-    font-weight: 300;
-}
 nav {
-    padding: 2em 2em;
+    padding: 2rem 2rem;
     background-color: var(--purple);
     display: flex;
     align-items: center;
     justify-content: left;
-    height: 3em;
+    height: 3rem;
 }
 .nav-span {
-    padding: 1em;
+    padding: 1rem;
 }
 .nav-link {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     color: white;
-    font-size: 1.4em;
+    font-size: 1.4rem;
+}
+main {
+    padding: 0rem 1rem;
+    font-weight: 300;
 }
 h1, h2 {
     color: #51247a;
@@ -29,31 +30,40 @@ h1, h2 {
 }
 h1 {
     font-family: "Montserrat", Helvetica, Arial, sans-serif;
-    font-size: 2.6em;
+    font-size: 2.6rem;
 }
 h2 {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 p, label {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 1.2em;
-}
-.csse2002 {
-    font-size: 0.2em;
+    font-size: 1.2rem;
 }
 input, textarea {
-    font-size: 1em;
+    font-size: 1rem;
 }
+img {
+    width: 3rem;
+    height: 3rem;
+}
+b {
+    font-weight: 500;
+}
+
+/* Classes */
 .error {
     color: red;
 }
 .comment {
     color: var(--comment-grey);
-    padding-left: 3em;
+    padding-left: 3rem;
 }
 .small {
-    font-size: 0.9em;
+    font-size: 0.9rem;
+    font-weight: 200;
 }
+
+/* Average rating colours */
 .red {
     color: red;
 }
@@ -62,8 +72,4 @@ input, textarea {
 }
 .green {
     color: green;
-}
-img {
-    width: 3em;
-    height: 3em;
 }

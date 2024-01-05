@@ -2,13 +2,16 @@
 {% load static %}
 
 {% block title %}
-{{ course_code }} Experiences | UQ Course Experiences
+{{ course_code }} Experiences | Course Experiences
 {% endblock %}
 
 {% block content %}
-<h1>No experiences found for {{ course_code }} 😔 | UQ Course Experiences</h1>
+<h1>No experiences found for {{ course_code }} 😔 |  Course Experiences</h1>
 <p>
     Either no experiences have been shared for {{ course_code }} or this course code is invalid.
 </p>
-<p><a href="{% url 'home' %}" autofocus>Back to homepage</a></p>
+<p>
+    If you've taken this course before, why not <a href="{% url 'add_experience' %}">add your experience</a>?
+</p>
+<p><a href="{% url 'home' %}">Back to homepage</a></p>
 {% endblock %}

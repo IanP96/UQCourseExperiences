@@ -10,23 +10,26 @@
 <p><a href="{% url 'home' %}">Back to homepage</a></p>
 
 <h2>{{ num_experiences }} experience{{ plural_s }} found</h2>
-<p>Average satisfaction rate: <span class="{{ colour }}">{{ satisfaction_rate }}%</span></p>
+<p>Average satisfaction rate: <span class="{{ colour }}"><b>{{ satisfaction_rate }}%</b></span></p>
 
-<h2>Experiences:</h2>
+<h2>Experiences</h2>
 
 {% for experience, comments in experience_data.items %}
 
 <p>
     {{ experience.description }}<br>
     <span class="small">
-        <i>{{ experience.get_rating_display }} - {{ experience.readable_creation_date }}</i> -
+        {{ experience.get_rating_display }} • {{ experience.readable_creation_date }} •
         <a href="/comment/{{ experience.id }}">Comment</a>
     </span>
 </p>
-<p class="comment">{{ comments|length }} comment/s</p>
+
+<div class="comment">
+<p class="small">{{ comments|length }} comment/s</p>
 {% for comment in comments %}
-<p class="comment">{{ comment.description }} - <i>{{ comment.readable_creation_date }}</i></p>
+<p>{{ comment.description }}<span class="small"> • {{ comment.readable_creation_date }}</span></p>
 {% endfor %}
+</div>
 
 {% endfor %}
 
