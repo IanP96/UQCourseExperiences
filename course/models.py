@@ -26,7 +26,7 @@ class Experience(Model):
         return f"{self.course_code} ({self.id}): {trim(self.description, 20)}"
 
     def readable_creation_date(self) -> str:
-        return naturalday(self.creation_date).capitalize()
+        return pretty_date(self.creation_date)
 
 
 class Comment(Model):
@@ -40,7 +40,7 @@ class Comment(Model):
                f"{trim(self.description, 20)}"
 
     def readable_creation_date(self) -> str:
-        return naturalday(self.creation_date).capitalize()
+        return pretty_date(self.creation_date)
 
 
 def trim(text: str, num_chars: int) -> str:
@@ -58,3 +58,27 @@ def trim(text: str, num_chars: int) -> str:
         return text
     else:
         return f"{text[:num_chars - 3]}..."
+
+
+def pretty_date(date_to_format: date):
+    """
+    Get a date object and return a pretty string like 'yesterday',
+    '3 months ago', 'today', etc.
+
+    Source: https://stackoverflow.com/questions/1551382/user-friendly-time-format-in-python
+    (slightly modified)
+    """
+    diff = date.today() - date_to_format
+    day_diff = diff.days
+
+    if day_diff <= 0:
+        return "today"
+    elif day_diff == 1:
+        return "yesterday"
+    elif day_diff < 7:
+        return f"{str(day_diff)} days ago"
+    elif day_diff < 31:
+        return f"{str(round(day_diff / 7))} weeks ago"
+    if day_diff < 365:
+        return f"{str(round(day_diff / 30))} months ago"
+    return f"{str(round(day_diff / 365))} years ago"
