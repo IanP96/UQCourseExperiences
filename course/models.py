@@ -20,7 +20,7 @@ class Experience(Model):
                   "didn't like the course, 0 if they were neutral.",
         default=1
     )
-    creation_date = DateField(auto_now=True)
+    creation_date = DateField(auto_now_add=True)
 
     def __str__(self) -> str:
         return f"{self.course_code} ({self.id}): {trim(self.description, 20)}"
@@ -33,7 +33,7 @@ class Comment(Model):
 
     experience = ForeignKey(Experience, CASCADE)
     description = TextField()
-    creation_date = DateField(auto_now=True)
+    creation_date = DateField(auto_now_add=True)
 
     def __str__(self) -> str:
         return f"{self.experience.course_code} ({self.id}): " \
