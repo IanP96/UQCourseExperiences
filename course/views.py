@@ -80,8 +80,8 @@ def pluralise(qty: int) -> str:
 
 def add_experience_view(request):
     context = {
-        "invalid_course_code": False,
-        "invalid_description": False
+        "invalid_course_code": False, "invalid_description": False,
+        "course_code": "", "description": ""
     }
     if request.method == "POST":
         # Form submitted
